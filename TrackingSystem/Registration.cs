@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,10 +20,45 @@ namespace TrackingSystem
         {
             InitializeComponent();
         }
+        string cs = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\Desktop\Uni\ООP\TrackingSystem\TrackingSystem\Database1.mdf;Integrated Security=True";
+        SqlConnection sqlconnection;
+        SqlCommand sqlcommand;
+        string Query;
+        DataTable datatable;
+        SqlDataAdapter sqladapter;
+        DataView gridDataSourse;
+        int ID = 1000;
 
+        void View(string Qu)
+        {
+            sqlconnection = new SqlConnection(cs);
+            sqlconnection.Open();
+            sqlcommand = new SqlCommand(Qu, sqlconnection);
+            DataTable dt = new DataTable();
+            sqladapter = new SqlDataAdapter();
+            sqladapter.SelectCommand = sqlcommand;
+            sqladapter.Fill(dt);
+            sqlconnection.Close();
+        }
         private void SUBMIT_button_Click(object sender, EventArgs e)
         {
-
+            if (UserNameTextBox.Text != "" && PasswordTextBox.Text != "" && NameTextBox.Text != "" && LastNameTextBox.Text!=""&& RoleTextBox.Text!="")
+            {
+                sqlconnection = new SqlConnection(cs);
+                sqlconnection.Open();
+                Query = "Insert INTO [Employee] (id,username,password,name,lastname,role) VALUES (@id,@username,@password,@name,@lastname,@role)";
+                sqlcommand = new SqlCommand(Query, sqlconnection);
+                sqlcommand.Parameters.AddWithValue("@id", ID);
+                sqlcommand.Parameters.AddWithValue("@username", UserNameTextBox.Text);
+                sqlcommand.Parameters.AddWithValue("@password", PasswordTextBox.Text);
+                sqlcommand.Parameters.AddWithValue("@name", NameTextBox.Text);
+                sqlcommand.Parameters.AddWithValue("@lastname", LastNameTextBox.Text);
+                sqlcommand.Parameters.AddWithValue("@role", RoleTextBox.Text);
+                sqlcommand.ExecuteNonQuery();
+                sqlconnection.Close();
+                ID++;
+            }
+           
         }
 
 
