@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.RegistrationLabel = new System.Windows.Forms.Label();
             this.UserNameTextBox = new System.Windows.Forms.TextBox();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
@@ -39,6 +40,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.SUBMIT_button = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // RegistrationLabel
@@ -47,7 +51,7 @@
             this.RegistrationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RegistrationLabel.Location = new System.Drawing.Point(237, 44);
             this.RegistrationLabel.Name = "RegistrationLabel";
-            this.RegistrationLabel.Size = new System.Drawing.Size(275, 39);
+            this.RegistrationLabel.Size = new System.Drawing.Size(263, 38);
             this.RegistrationLabel.TabIndex = 0;
             this.RegistrationLabel.Text = "REGISTRATION";
             // 
@@ -57,6 +61,7 @@
             this.UserNameTextBox.Name = "UserNameTextBox";
             this.UserNameTextBox.Size = new System.Drawing.Size(168, 22);
             this.UserNameTextBox.TabIndex = 1;
+            this.UserNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UserNameTextBox_KeyPress);
             // 
             // PasswordTextBox
             // 
@@ -64,6 +69,7 @@
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.Size = new System.Drawing.Size(168, 22);
             this.PasswordTextBox.TabIndex = 2;
+            this.PasswordTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PasswordTextBox_KeyPress);
             // 
             // NameTextBox
             // 
@@ -71,6 +77,7 @@
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(168, 22);
             this.NameTextBox.TabIndex = 3;
+            this.NameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
             // 
             // LastNameTextBox
             // 
@@ -78,6 +85,7 @@
             this.LastNameTextBox.Name = "LastNameTextBox";
             this.LastNameTextBox.Size = new System.Drawing.Size(168, 22);
             this.LastNameTextBox.TabIndex = 4;
+            this.LastNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LastNameTextBox_KeyPress);
             // 
             // RoleTextBox
             // 
@@ -85,6 +93,7 @@
             this.RoleTextBox.Name = "RoleTextBox";
             this.RoleTextBox.Size = new System.Drawing.Size(168, 22);
             this.RoleTextBox.TabIndex = 5;
+            this.RoleTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RoleTextBox_KeyPress);
             // 
             // label1
             // 
@@ -131,11 +140,26 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Role";
             // 
+            // SUBMIT_button
+            // 
+            this.SUBMIT_button.Location = new System.Drawing.Point(320, 359);
+            this.SUBMIT_button.Name = "SUBMIT_button";
+            this.SUBMIT_button.Size = new System.Drawing.Size(75, 23);
+            this.SUBMIT_button.TabIndex = 12;
+            this.SUBMIT_button.Text = "SUBMIT";
+            this.SUBMIT_button.UseVisualStyleBackColor = true;
+            this.SUBMIT_button.Click += new System.EventHandler(this.SUBMIT_button_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.SUBMIT_button);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -149,6 +173,7 @@
             this.Controls.Add(this.RegistrationLabel);
             this.Name = "Registration";
             this.Text = "Registration";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,5 +192,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button SUBMIT_button;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
