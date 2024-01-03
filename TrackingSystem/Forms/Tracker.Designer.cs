@@ -377,7 +377,7 @@
             // 
             // Donebutton
             // 
-            this.Donebutton.Location = new System.Drawing.Point(376, 327);
+            this.Donebutton.Location = new System.Drawing.Point(312, 278);
             this.Donebutton.Name = "Donebutton";
             this.Donebutton.Size = new System.Drawing.Size(75, 23);
             this.Donebutton.TabIndex = 7;
@@ -423,7 +423,7 @@
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(376, 145);
+            this.richTextBox2.Location = new System.Drawing.Point(376, 116);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(316, 100);
             this.richTextBox2.TabIndex = 2;
@@ -490,7 +490,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(376, 123);
+            this.label13.Location = new System.Drawing.Point(376, 94);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(64, 16);
             this.label13.TabIndex = 8;
