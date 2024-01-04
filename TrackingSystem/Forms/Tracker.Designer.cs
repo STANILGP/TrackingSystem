@@ -73,6 +73,7 @@
             this.taskBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.taskTableAdapter = new TrackingSystem.Database1DataSetTableAdapters.TaskTableAdapter();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.taskBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.TaskTab.SuspendLayout();
             this.AddTaskTab.SuspendLayout();
@@ -82,6 +83,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.taskBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -428,6 +430,7 @@
             this.Donebutton.Text = "DONE";
             this.Donebutton.UseVisualStyleBackColor = true;
             this.Donebutton.UseWaitCursor = true;
+            this.Donebutton.Click += new System.EventHandler(this.Donebutton_Click);
             // 
             // label12
             // 
@@ -489,6 +492,7 @@
             // 
             // TaskcomboBox
             // 
+            this.TaskcomboBox.DataSource = this.taskBindingSource1;
             this.TaskcomboBox.FormattingEnabled = true;
             this.TaskcomboBox.Location = new System.Drawing.Point(86, 192);
             this.TaskcomboBox.Name = "TaskcomboBox";
@@ -529,6 +533,11 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // taskBindingSource1
+            // 
+            this.taskBindingSource1.DataMember = "Task";
+            this.taskBindingSource1.DataSource = this.database1DataSetBindingSource;
+            // 
             // Tracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -550,6 +559,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.taskBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -600,5 +610,6 @@
         private System.Windows.Forms.ComboBox Employee_comboBox;
         private System.Windows.Forms.ComboBox Owner_comboBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.BindingSource taskBindingSource1;
     }
 }
