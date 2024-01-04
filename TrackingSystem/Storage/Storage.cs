@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrackingSystem.Storage
 {
-    public class Storage :IStorage
+    public class Storage 
     {
         private Employee MYProfile;
         private List<Employee> MyEmployeeList;
