@@ -67,6 +67,7 @@
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Entity\Employee.cs" />
+    <Compile Include="Entity\Task.cs" />
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,7 +88,7 @@
     <Compile Include="Forms\SINGIN.Designer.cs">
       <DependentUpon>SINGIN.cs</DependentUpon>
     </Compile>
-    <Compile Include="Entity\Task.cs" />
+    <Compile Include="Entity\WorkCard.cs" />
     <Compile Include="Forms\Tracker.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -8,13 +8,15 @@ namespace TrackingSystem
 {
     public class Employee
     {
+        private int id;
         private string userName;
         private string password;
         private string firstName;
         private string lastName;
         private string role;
-        public Employee(string UserName,string Password, string FirstName,string LastName,string Role) 
+        public Employee(int ID,string UserName,string Password, string FirstName,string LastName,string Role) 
         {
+            this.id = ID;
             this.userName = UserName;
             this.password = Password;
             this.firstName = FirstName; 

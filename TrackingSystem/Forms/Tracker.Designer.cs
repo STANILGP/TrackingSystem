@@ -31,59 +31,57 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TaskTab = new System.Windows.Forms.TabPage();
+            this.NextButton = new System.Windows.Forms.Button();
+            this.Prevbutton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Searchbutton = new System.Windows.Forms.Button();
             this.AddTaskTab = new System.Windows.Forms.TabPage();
+            this.Employee_comboBox = new System.Windows.Forms.ComboBox();
+            this.Owner_comboBox = new System.Windows.Forms.ComboBox();
             this.AddTaskbutton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.Summary_richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.Status_comboBox = new System.Windows.Forms.ComboBox();
+            this.NowHour_textBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DayOfEnddateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.DayOfStartdateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.NeededHours_textbox = new System.Windows.Forms.TextBox();
+            this.TaskName_textBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.WarkCardTab = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
             this.Donebutton = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.EndTaskdateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.StartTaskdateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Summary_richTextBox = new System.Windows.Forms.RichTextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.database1DataSet = new TrackingSystem.Database1DataSet();
+            this.TaskcomboBox = new System.Windows.Forms.ComboBox();
             this.database1DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet = new TrackingSystem.Database1DataSet();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeeTableAdapter = new TrackingSystem.Database1DataSetTableAdapters.EmployeeTableAdapter();
             this.taskBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.taskTableAdapter = new TrackingSystem.Database1DataSetTableAdapters.TaskTableAdapter();
-            this.taskBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.taskBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.label13 = new System.Windows.Forms.Label();
-            this.Prevbutton = new System.Windows.Forms.Button();
-            this.NextButton = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl1.SuspendLayout();
             this.TaskTab.SuspendLayout();
             this.AddTaskTab.SuspendLayout();
             this.WarkCardTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.taskBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.taskBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -116,12 +114,32 @@
             this.TaskTab.UseVisualStyleBackColor = true;
             this.TaskTab.UseWaitCursor = true;
             // 
+            // NextButton
+            // 
+            this.NextButton.Location = new System.Drawing.Point(463, 333);
+            this.NextButton.Name = "NextButton";
+            this.NextButton.Size = new System.Drawing.Size(75, 23);
+            this.NextButton.TabIndex = 4;
+            this.NextButton.Text = "Next";
+            this.NextButton.UseVisualStyleBackColor = true;
+            this.NextButton.UseWaitCursor = true;
+            // 
+            // Prevbutton
+            // 
+            this.Prevbutton.Location = new System.Drawing.Point(300, 333);
+            this.Prevbutton.Name = "Prevbutton";
+            this.Prevbutton.Size = new System.Drawing.Size(75, 23);
+            this.Prevbutton.TabIndex = 3;
+            this.Prevbutton.Text = "Prev";
+            this.Prevbutton.UseVisualStyleBackColor = true;
+            this.Prevbutton.UseWaitCursor = true;
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 183F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 184F));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(36, 76);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
@@ -154,24 +172,24 @@
             // 
             // AddTaskTab
             // 
+            this.AddTaskTab.Controls.Add(this.Employee_comboBox);
+            this.AddTaskTab.Controls.Add(this.Owner_comboBox);
             this.AddTaskTab.Controls.Add(this.AddTaskbutton);
             this.AddTaskTab.Controls.Add(this.label9);
-            this.AddTaskTab.Controls.Add(this.richTextBox1);
-            this.AddTaskTab.Controls.Add(this.comboBox1);
-            this.AddTaskTab.Controls.Add(this.textBox6);
+            this.AddTaskTab.Controls.Add(this.Summary_richTextBox2);
+            this.AddTaskTab.Controls.Add(this.Status_comboBox);
+            this.AddTaskTab.Controls.Add(this.NowHour_textBox);
             this.AddTaskTab.Controls.Add(this.label7);
             this.AddTaskTab.Controls.Add(this.label6);
             this.AddTaskTab.Controls.Add(this.label5);
             this.AddTaskTab.Controls.Add(this.label4);
             this.AddTaskTab.Controls.Add(this.label3);
             this.AddTaskTab.Controls.Add(this.label2);
-            this.AddTaskTab.Controls.Add(this.dateTimePicker2);
-            this.AddTaskTab.Controls.Add(this.dateTimePicker1);
+            this.AddTaskTab.Controls.Add(this.DayOfEnddateTimePicker);
+            this.AddTaskTab.Controls.Add(this.DayOfStartdateTimePicker);
             this.AddTaskTab.Controls.Add(this.label1);
-            this.AddTaskTab.Controls.Add(this.textBox5);
-            this.AddTaskTab.Controls.Add(this.textBox4);
-            this.AddTaskTab.Controls.Add(this.textBox3);
-            this.AddTaskTab.Controls.Add(this.textBox2);
+            this.AddTaskTab.Controls.Add(this.NeededHours_textbox);
+            this.AddTaskTab.Controls.Add(this.TaskName_textBox);
             this.AddTaskTab.Controls.Add(this.label8);
             this.AddTaskTab.Location = new System.Drawing.Point(4, 25);
             this.AddTaskTab.Name = "AddTaskTab";
@@ -181,6 +199,26 @@
             this.AddTaskTab.Text = "Add Task";
             this.AddTaskTab.UseVisualStyleBackColor = true;
             this.AddTaskTab.UseWaitCursor = true;
+            // 
+            // Employee_comboBox
+            // 
+            this.Employee_comboBox.FormattingEnabled = true;
+            this.Employee_comboBox.Location = new System.Drawing.Point(122, 132);
+            this.Employee_comboBox.Name = "Employee_comboBox";
+            this.Employee_comboBox.Size = new System.Drawing.Size(121, 24);
+            this.Employee_comboBox.TabIndex = 20;
+            this.Employee_comboBox.UseWaitCursor = true;
+            this.Employee_comboBox.Validating += new System.ComponentModel.CancelEventHandler(this.Employee_comboBox_Validating);
+            // 
+            // Owner_comboBox
+            // 
+            this.Owner_comboBox.FormattingEnabled = true;
+            this.Owner_comboBox.Location = new System.Drawing.Point(122, 90);
+            this.Owner_comboBox.Name = "Owner_comboBox";
+            this.Owner_comboBox.Size = new System.Drawing.Size(121, 24);
+            this.Owner_comboBox.TabIndex = 19;
+            this.Owner_comboBox.UseWaitCursor = true;
+            this.Owner_comboBox.Validating += new System.ComponentModel.CancelEventHandler(this.Owner_comboBox_Validating);
             // 
             // AddTaskbutton
             // 
@@ -202,31 +240,39 @@
             this.label9.Text = "Summary";
             this.label9.UseWaitCursor = true;
             // 
-            // richTextBox1
+            // Summary_richTextBox2
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(381, 190);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(228, 92);
-            this.richTextBox1.TabIndex = 16;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.UseWaitCursor = true;
+            this.Summary_richTextBox2.Location = new System.Drawing.Point(381, 190);
+            this.Summary_richTextBox2.Name = "Summary_richTextBox2";
+            this.Summary_richTextBox2.Size = new System.Drawing.Size(228, 92);
+            this.Summary_richTextBox2.TabIndex = 16;
+            this.Summary_richTextBox2.Text = "";
+            this.Summary_richTextBox2.UseWaitCursor = true;
+            this.Summary_richTextBox2.Validating += new System.ComponentModel.CancelEventHandler(this.Summary_richTextBox2_Validating);
             // 
-            // comboBox1
+            // Status_comboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(101, 242);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 14;
-            this.comboBox1.UseWaitCursor = true;
+            this.Status_comboBox.FormattingEnabled = true;
+            this.Status_comboBox.Items.AddRange(new object[] {
+            "NEW",
+            "STARTED",
+            "ENDED",
+            "CANSELED"});
+            this.Status_comboBox.Location = new System.Drawing.Point(101, 242);
+            this.Status_comboBox.Name = "Status_comboBox";
+            this.Status_comboBox.Size = new System.Drawing.Size(121, 24);
+            this.Status_comboBox.TabIndex = 14;
+            this.Status_comboBox.UseWaitCursor = true;
+            this.Status_comboBox.Validating += new System.ComponentModel.CancelEventHandler(this.Status_comboBox_Validating);
             // 
-            // textBox6
+            // NowHour_textBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(122, 205);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(37, 22);
-            this.textBox6.TabIndex = 13;
-            this.textBox6.UseWaitCursor = true;
+            this.NowHour_textBox.Location = new System.Drawing.Point(122, 205);
+            this.NowHour_textBox.Name = "NowHour_textBox";
+            this.NowHour_textBox.Size = new System.Drawing.Size(37, 22);
+            this.NowHour_textBox.TabIndex = 13;
+            this.NowHour_textBox.UseWaitCursor = true;
+            this.NowHour_textBox.TextChanged += new System.EventHandler(this.NowHour_textBox_TextChanged);
             // 
             // label7
             // 
@@ -243,9 +289,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(38, 169);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(160, 16);
+            this.label6.Size = new System.Drawing.Size(96, 16);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Hour probably to be done";
+            this.label6.Text = "Needed Hours";
             this.label6.UseWaitCursor = true;
             // 
             // label5
@@ -288,21 +334,23 @@
             this.label2.Text = "Owner";
             this.label2.UseWaitCursor = true;
             // 
-            // dateTimePicker2
+            // DayOfEnddateTimePicker
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(381, 131);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker2.TabIndex = 6;
-            this.dateTimePicker2.UseWaitCursor = true;
+            this.DayOfEnddateTimePicker.Location = new System.Drawing.Point(381, 131);
+            this.DayOfEnddateTimePicker.Name = "DayOfEnddateTimePicker";
+            this.DayOfEnddateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.DayOfEnddateTimePicker.TabIndex = 6;
+            this.DayOfEnddateTimePicker.UseWaitCursor = true;
+            this.DayOfEnddateTimePicker.Validating += new System.ComponentModel.CancelEventHandler(this.DayOfEnddateTimePicker_Validating);
             // 
-            // dateTimePicker1
+            // DayOfStartdateTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(381, 82);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 5;
-            this.dateTimePicker1.UseWaitCursor = true;
+            this.DayOfStartdateTimePicker.Location = new System.Drawing.Point(381, 82);
+            this.DayOfStartdateTimePicker.Name = "DayOfStartdateTimePicker";
+            this.DayOfStartdateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.DayOfStartdateTimePicker.TabIndex = 5;
+            this.DayOfStartdateTimePicker.UseWaitCursor = true;
+            this.DayOfStartdateTimePicker.Validating += new System.ComponentModel.CancelEventHandler(this.DayOfStartdateTimePicker_Validating);
             // 
             // label1
             // 
@@ -314,37 +362,23 @@
             this.label1.Text = "Task Name";
             this.label1.UseWaitCursor = true;
             // 
-            // textBox5
+            // NeededHours_textbox
             // 
-            this.textBox5.Location = new System.Drawing.Point(200, 163);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(35, 22);
-            this.textBox5.TabIndex = 3;
-            this.textBox5.UseWaitCursor = true;
+            this.NeededHours_textbox.Location = new System.Drawing.Point(149, 169);
+            this.NeededHours_textbox.Name = "NeededHours_textbox";
+            this.NeededHours_textbox.Size = new System.Drawing.Size(35, 22);
+            this.NeededHours_textbox.TabIndex = 3;
+            this.NeededHours_textbox.UseWaitCursor = true;
+            this.NeededHours_textbox.Validating += new System.ComponentModel.CancelEventHandler(this.NeededHours_textbox_Validating);
             // 
-            // textBox4
+            // TaskName_textBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(122, 126);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 2;
-            this.textBox4.UseWaitCursor = true;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(122, 84);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 1;
-            this.textBox3.UseWaitCursor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(122, 44);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 0;
-            this.textBox2.UseWaitCursor = true;
+            this.TaskName_textBox.Location = new System.Drawing.Point(122, 44);
+            this.TaskName_textBox.Name = "TaskName_textBox";
+            this.TaskName_textBox.Size = new System.Drawing.Size(100, 22);
+            this.TaskName_textBox.TabIndex = 0;
+            this.TaskName_textBox.UseWaitCursor = true;
+            this.TaskName_textBox.Validating += new System.ComponentModel.CancelEventHandler(this.TaskName_textBox_Validating);
             // 
             // label8
             // 
@@ -362,11 +396,11 @@
             this.WarkCardTab.Controls.Add(this.Donebutton);
             this.WarkCardTab.Controls.Add(this.label12);
             this.WarkCardTab.Controls.Add(this.label11);
-            this.WarkCardTab.Controls.Add(this.dateTimePicker4);
-            this.WarkCardTab.Controls.Add(this.dateTimePicker3);
-            this.WarkCardTab.Controls.Add(this.richTextBox2);
+            this.WarkCardTab.Controls.Add(this.EndTaskdateTimePicker);
+            this.WarkCardTab.Controls.Add(this.StartTaskdateTimePicker);
+            this.WarkCardTab.Controls.Add(this.Summary_richTextBox);
             this.WarkCardTab.Controls.Add(this.label10);
-            this.WarkCardTab.Controls.Add(this.comboBox2);
+            this.WarkCardTab.Controls.Add(this.TaskcomboBox);
             this.WarkCardTab.Location = new System.Drawing.Point(4, 25);
             this.WarkCardTab.Name = "WarkCardTab";
             this.WarkCardTab.Size = new System.Drawing.Size(792, 375);
@@ -374,6 +408,16 @@
             this.WarkCardTab.Text = "WorkCard";
             this.WarkCardTab.UseVisualStyleBackColor = true;
             this.WarkCardTab.UseWaitCursor = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(376, 94);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(64, 16);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "Summary";
+            this.label13.UseWaitCursor = true;
             // 
             // Donebutton
             // 
@@ -405,30 +449,33 @@
             this.label11.Text = "Start Task";
             this.label11.UseWaitCursor = true;
             // 
-            // dateTimePicker4
+            // EndTaskdateTimePicker
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(41, 143);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker4.TabIndex = 4;
-            this.dateTimePicker4.UseWaitCursor = true;
+            this.EndTaskdateTimePicker.Location = new System.Drawing.Point(41, 143);
+            this.EndTaskdateTimePicker.Name = "EndTaskdateTimePicker";
+            this.EndTaskdateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.EndTaskdateTimePicker.TabIndex = 4;
+            this.EndTaskdateTimePicker.UseWaitCursor = true;
+            this.EndTaskdateTimePicker.Validating += new System.ComponentModel.CancelEventHandler(this.EndTaskdateTimePicker_Validating);
             // 
-            // dateTimePicker3
+            // StartTaskdateTimePicker
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(41, 93);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker3.TabIndex = 3;
-            this.dateTimePicker3.UseWaitCursor = true;
+            this.StartTaskdateTimePicker.Location = new System.Drawing.Point(41, 93);
+            this.StartTaskdateTimePicker.Name = "StartTaskdateTimePicker";
+            this.StartTaskdateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.StartTaskdateTimePicker.TabIndex = 3;
+            this.StartTaskdateTimePicker.UseWaitCursor = true;
+            this.StartTaskdateTimePicker.Validating += new System.ComponentModel.CancelEventHandler(this.StartTaskdateTimePicker_Validating);
             // 
-            // richTextBox2
+            // Summary_richTextBox
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(376, 116);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(316, 100);
-            this.richTextBox2.TabIndex = 2;
-            this.richTextBox2.Text = "";
-            this.richTextBox2.UseWaitCursor = true;
+            this.Summary_richTextBox.Location = new System.Drawing.Point(376, 116);
+            this.Summary_richTextBox.Name = "Summary_richTextBox";
+            this.Summary_richTextBox.Size = new System.Drawing.Size(316, 100);
+            this.Summary_richTextBox.TabIndex = 2;
+            this.Summary_richTextBox.Text = "";
+            this.Summary_richTextBox.UseWaitCursor = true;
+            this.Summary_richTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.Summary_richTextBox_Validating);
             // 
             // label10
             // 
@@ -440,24 +487,25 @@
             this.label10.Text = "Task";
             this.label10.UseWaitCursor = true;
             // 
-            // comboBox2
+            // TaskcomboBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(86, 192);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(155, 24);
-            this.comboBox2.TabIndex = 0;
-            this.comboBox2.UseWaitCursor = true;
-            // 
-            // database1DataSet
-            // 
-            this.database1DataSet.DataSetName = "Database1DataSet";
-            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.TaskcomboBox.FormattingEnabled = true;
+            this.TaskcomboBox.Location = new System.Drawing.Point(86, 192);
+            this.TaskcomboBox.Name = "TaskcomboBox";
+            this.TaskcomboBox.Size = new System.Drawing.Size(155, 24);
+            this.TaskcomboBox.TabIndex = 0;
+            this.TaskcomboBox.UseWaitCursor = true;
+            this.TaskcomboBox.Validating += new System.ComponentModel.CancelEventHandler(this.TaskcomboBox_Validating);
             // 
             // database1DataSetBindingSource
             // 
             this.database1DataSetBindingSource.DataSource = this.database1DataSet;
             this.database1DataSetBindingSource.Position = 0;
+            // 
+            // database1DataSet
+            // 
+            this.database1DataSet.DataSetName = "Database1DataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // employeeBindingSource
             // 
@@ -477,42 +525,9 @@
             // 
             this.taskTableAdapter.ClearBeforeFill = true;
             // 
-            // taskBindingSource1
+            // errorProvider1
             // 
-            this.taskBindingSource1.DataMember = "Task";
-            this.taskBindingSource1.DataSource = this.database1DataSetBindingSource;
-            // 
-            // taskBindingSource2
-            // 
-            this.taskBindingSource2.DataMember = "Task";
-            this.taskBindingSource2.DataSource = this.database1DataSetBindingSource;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(376, 94);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(64, 16);
-            this.label13.TabIndex = 8;
-            this.label13.Text = "Summary";
-            // 
-            // Prevbutton
-            // 
-            this.Prevbutton.Location = new System.Drawing.Point(300, 333);
-            this.Prevbutton.Name = "Prevbutton";
-            this.Prevbutton.Size = new System.Drawing.Size(75, 23);
-            this.Prevbutton.TabIndex = 3;
-            this.Prevbutton.Text = "Prev";
-            this.Prevbutton.UseVisualStyleBackColor = true;
-            // 
-            // NextButton
-            // 
-            this.NextButton.Location = new System.Drawing.Point(463, 333);
-            this.NextButton.Name = "NextButton";
-            this.NextButton.Size = new System.Drawing.Size(75, 23);
-            this.NextButton.TabIndex = 4;
-            this.NextButton.Text = "Next";
-            this.NextButton.UseVisualStyleBackColor = true;
+            this.errorProvider1.ContainerControl = this;
             // 
             // Tracker
             // 
@@ -530,12 +545,11 @@
             this.AddTaskTab.PerformLayout();
             this.WarkCardTab.ResumeLayout(false);
             this.WarkCardTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.taskBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.taskBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -554,38 +568,37 @@
         private Database1DataSetTableAdapters.EmployeeTableAdapter employeeTableAdapter;
         private System.Windows.Forms.BindingSource taskBindingSource;
         private Database1DataSetTableAdapters.TaskTableAdapter taskTableAdapter;
-        private System.Windows.Forms.BindingSource taskBindingSource1;
-        private System.Windows.Forms.BindingSource taskBindingSource2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox NeededHours_textbox;
+        private System.Windows.Forms.TextBox TaskName_textBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DayOfEnddateTimePicker;
+        private System.Windows.Forms.DateTimePicker DayOfStartdateTimePicker;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.ComboBox Status_comboBox;
+        private System.Windows.Forms.TextBox NowHour_textBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox Summary_richTextBox2;
+        private System.Windows.Forms.RichTextBox Summary_richTextBox;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox TaskcomboBox;
         private System.Windows.Forms.Button AddTaskbutton;
         private System.Windows.Forms.Button Donebutton;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker EndTaskdateTimePicker;
+        private System.Windows.Forms.DateTimePicker StartTaskdateTimePicker;
         private System.Windows.Forms.Button NextButton;
         private System.Windows.Forms.Button Prevbutton;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox Employee_comboBox;
+        private System.Windows.Forms.ComboBox Owner_comboBox;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
