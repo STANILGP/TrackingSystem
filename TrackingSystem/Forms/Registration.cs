@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Data.SqlClient;
 
 namespace TrackingSystem
 {
@@ -20,7 +21,7 @@ namespace TrackingSystem
         {
             InitializeComponent();
         }
-        string cs = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\Desktop\Uni\ООP\TrackingSystem\TrackingSystem\Database1.mdf;Integrated Security=True";
+        string cs = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\Desktop\Uni\ООP\TrackingSystem\TrackingSystem\Database\Database1.mdf;Integrated Security=True";
         SqlConnection sqlconnection;
         SqlCommand sqlcommand;
         string Query;
@@ -29,26 +30,14 @@ namespace TrackingSystem
         DataView gridDataSourse;
         int ID = 1000;
 
-        void View(string Qu)
-        {
-            sqlconnection = new SqlConnection(cs);
-            sqlconnection.Open();
-            sqlcommand = new SqlCommand(Qu, sqlconnection);
-            DataTable dt = new DataTable();
-            sqladapter = new SqlDataAdapter();
-            sqladapter.SelectCommand = sqlcommand;
-            sqladapter.Fill(dt);
-            sqlconnection.Close();
-        }
         private void SUBMIT_button_Click(object sender, EventArgs e)
         {
             if (UserNameTextBox.Text != "" && PasswordTextBox.Text != "" && NameTextBox.Text != "" && LastNameTextBox.Text!=""&& RoleTextBox.Text!="")
             {
                 sqlconnection = new SqlConnection(cs);
                 sqlconnection.Open();
-                Query = "Insert INTO [Employee] (id,username,password,name,lastname,role) VALUES (@id,@username,@password,@name,@lastname,@role)";
+                Query = "Insert INTO [Employee] (username,password,name,lastname,role) VALUES (@username,@password,@name,@lastname,@role)";
                 sqlcommand = new SqlCommand(Query, sqlconnection);
-                sqlcommand.Parameters.AddWithValue("@id", ID);
                 sqlcommand.Parameters.AddWithValue("@username", UserNameTextBox.Text);
                 sqlcommand.Parameters.AddWithValue("@password", PasswordTextBox.Text);
                 sqlcommand.Parameters.AddWithValue("@name", NameTextBox.Text);
@@ -56,11 +45,12 @@ namespace TrackingSystem
                 sqlcommand.Parameters.AddWithValue("@role", RoleTextBox.Text);
                 sqlcommand.ExecuteNonQuery();
                 sqlconnection.Close();
-                ID++;
+                Login login = new Login();
+                login.Show();
+                this.Hide();
             }
            
         }
-
 
         private void UserNameTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {

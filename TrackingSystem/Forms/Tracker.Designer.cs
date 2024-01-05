@@ -66,6 +66,7 @@
             this.Summary_richTextBox = new System.Windows.Forms.RichTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.TaskcomboBox = new System.Windows.Forms.ComboBox();
+            this.taskBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet = new TrackingSystem.Database1DataSet();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -73,17 +74,16 @@
             this.taskBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.taskTableAdapter = new TrackingSystem.Database1DataSetTableAdapters.TaskTableAdapter();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.taskBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.TaskTab.SuspendLayout();
             this.AddTaskTab.SuspendLayout();
             this.WarkCardTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.taskBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.taskBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -92,7 +92,7 @@
             this.tabControl1.Controls.Add(this.TaskTab);
             this.tabControl1.Controls.Add(this.AddTaskTab);
             this.tabControl1.Controls.Add(this.WarkCardTab);
-            this.tabControl1.Location = new System.Drawing.Point(2, 34);
+            this.tabControl1.Location = new System.Drawing.Point(3, 34);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(800, 404);
@@ -231,6 +231,7 @@
             this.AddTaskbutton.Text = "ADD TASK";
             this.AddTaskbutton.UseVisualStyleBackColor = true;
             this.AddTaskbutton.UseWaitCursor = true;
+            this.AddTaskbutton.Click += new System.EventHandler(this.AddTaskbutton_Click);
             // 
             // label9
             // 
@@ -501,6 +502,11 @@
             this.TaskcomboBox.UseWaitCursor = true;
             this.TaskcomboBox.Validating += new System.ComponentModel.CancelEventHandler(this.TaskcomboBox_Validating);
             // 
+            // taskBindingSource1
+            // 
+            this.taskBindingSource1.DataMember = "Task";
+            this.taskBindingSource1.DataSource = this.database1DataSetBindingSource;
+            // 
             // database1DataSetBindingSource
             // 
             this.database1DataSetBindingSource.DataSource = this.database1DataSet;
@@ -533,11 +539,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // taskBindingSource1
-            // 
-            this.taskBindingSource1.DataMember = "Task";
-            this.taskBindingSource1.DataSource = this.database1DataSetBindingSource;
-            // 
             // Tracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -554,12 +555,12 @@
             this.AddTaskTab.PerformLayout();
             this.WarkCardTab.ResumeLayout(false);
             this.WarkCardTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.taskBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.taskBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

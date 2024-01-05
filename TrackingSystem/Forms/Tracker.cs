@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Data.SqlClient;
 
 namespace TrackingSystem
 {
@@ -144,9 +145,8 @@ namespace TrackingSystem
             {
                 sqlconnection = new SqlConnection(cs);
                 sqlconnection.Open();
-                Query = "Insert INTO [WorkCard] (id,startOfAction,endOfAction,id_Task,discription,id_Employee) VALUES (@id,@startOfAction,@endOfAction,@id_Task,@discription,@id_Employee)";
+                Query = "Insert INTO [WorkCard] (startOfAction,endOfAction,id_Task,discription,id_Employee) VALUES (@startOfAction,@endOfAction,@id_Task,@discription,@id_Employee)";
                 sqlcommand = new SqlCommand(Query, sqlconnection);
-                sqlcommand.Parameters.AddWithValue("@id",WorkCardID);
                 sqlcommand.Parameters.AddWithValue("@startOfAction", StartTaskdateTimePicker.Value);
                 sqlcommand.Parameters.AddWithValue("@endOfAction", EndTaskdateTimePicker.Value);
                 sqlcommand.Parameters.AddWithValue("@id_Task", TaskcomboBox.SelectedItem);
@@ -161,6 +161,11 @@ namespace TrackingSystem
             {
                
             }
+        }
+
+        private void AddTaskbutton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
