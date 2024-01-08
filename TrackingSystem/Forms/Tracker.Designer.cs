@@ -37,14 +37,14 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Searchbutton = new System.Windows.Forms.Button();
             this.AddTaskTab = new System.Windows.Forms.TabPage();
+            this.NowHourstextBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.Employee_comboBox = new System.Windows.Forms.ComboBox();
             this.Owner_comboBox = new System.Windows.Forms.ComboBox();
             this.AddTaskbutton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.Summary_richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.Status_comboBox = new System.Windows.Forms.ComboBox();
-            this.NowHour_textBox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -174,14 +174,14 @@
             // 
             // AddTaskTab
             // 
+            this.AddTaskTab.Controls.Add(this.NowHourstextBox);
+            this.AddTaskTab.Controls.Add(this.label7);
             this.AddTaskTab.Controls.Add(this.Employee_comboBox);
             this.AddTaskTab.Controls.Add(this.Owner_comboBox);
             this.AddTaskTab.Controls.Add(this.AddTaskbutton);
             this.AddTaskTab.Controls.Add(this.label9);
             this.AddTaskTab.Controls.Add(this.Summary_richTextBox2);
             this.AddTaskTab.Controls.Add(this.Status_comboBox);
-            this.AddTaskTab.Controls.Add(this.NowHour_textBox);
-            this.AddTaskTab.Controls.Add(this.label7);
             this.AddTaskTab.Controls.Add(this.label6);
             this.AddTaskTab.Controls.Add(this.label5);
             this.AddTaskTab.Controls.Add(this.label4);
@@ -201,6 +201,25 @@
             this.AddTaskTab.Text = "Add Task";
             this.AddTaskTab.UseVisualStyleBackColor = true;
             this.AddTaskTab.UseWaitCursor = true;
+            // 
+            // NowHourstextBox
+            // 
+            this.NowHourstextBox.Location = new System.Drawing.Point(176, 197);
+            this.NowHourstextBox.Name = "NowHourstextBox";
+            this.NowHourstextBox.Size = new System.Drawing.Size(46, 22);
+            this.NowHourstextBox.TabIndex = 22;
+            this.NowHourstextBox.UseWaitCursor = true;
+            this.NowHourstextBox.Validating += new System.ComponentModel.CancelEventHandler(this.NowHourstextBox_Validating);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(41, 204);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(128, 16);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Hour to The moment";
+            this.label7.UseWaitCursor = true;
             // 
             // Employee_comboBox
             // 
@@ -261,31 +280,12 @@
             "STARTED",
             "ENDED",
             "CANSELED"});
-            this.Status_comboBox.Location = new System.Drawing.Point(101, 242);
+            this.Status_comboBox.Location = new System.Drawing.Point(101, 247);
             this.Status_comboBox.Name = "Status_comboBox";
             this.Status_comboBox.Size = new System.Drawing.Size(121, 24);
             this.Status_comboBox.TabIndex = 14;
             this.Status_comboBox.UseWaitCursor = true;
             this.Status_comboBox.Validating += new System.ComponentModel.CancelEventHandler(this.Status_comboBox_Validating);
-            // 
-            // NowHour_textBox
-            // 
-            this.NowHour_textBox.Location = new System.Drawing.Point(122, 205);
-            this.NowHour_textBox.Name = "NowHour_textBox";
-            this.NowHour_textBox.Size = new System.Drawing.Size(37, 22);
-            this.NowHour_textBox.TabIndex = 13;
-            this.NowHour_textBox.UseWaitCursor = true;
-            this.NowHour_textBox.TextChanged += new System.EventHandler(this.NowHour_textBox_TextChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(41, 205);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 16);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Now Hour";
-            this.label7.UseWaitCursor = true;
             // 
             // label6
             // 
@@ -386,7 +386,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(41, 250);
+            this.label8.Location = new System.Drawing.Point(41, 255);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(44, 16);
             this.label8.TabIndex = 15;
@@ -590,8 +590,6 @@
         private System.Windows.Forms.DateTimePicker DayOfStartdateTimePicker;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox Status_comboBox;
-        private System.Windows.Forms.TextBox NowHour_textBox;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -612,5 +610,7 @@
         private System.Windows.Forms.ComboBox Owner_comboBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.BindingSource taskBindingSource1;
+        private System.Windows.Forms.TextBox NowHourstextBox;
+        private System.Windows.Forms.Label label7;
     }
 }

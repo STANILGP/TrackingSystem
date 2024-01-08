@@ -11,12 +11,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Data.SqlClient;
+using TrackingSystem.Services;
 
 namespace TrackingSystem
 {
     public partial class Tracker : Form
     {
-
+        private DataBaseHelper _baseHelper;
         string cs = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\Desktop\Uni\ООP\TrackingSystem\TrackingSystem\Database\Database1.mdf;Integrated Security=True";
         SqlConnection sqlconnection;
         SqlCommand sqlcommand;
@@ -25,15 +26,13 @@ namespace TrackingSystem
         SqlDataAdapter sqladapter;
         DataView gridDataSourse;
         int WorkCardID = 10000;
+        
         public Tracker()
         {
             InitializeComponent();
+            _baseHelper = new DataBaseHelper();
         }
 
-        private void Tracker_Load(object sender, EventArgs e)
-        {
-           
-        }
 
         private void StartTaskdateTimePicker_Validating(object sender, CancelEventArgs e)
         {
@@ -115,14 +114,6 @@ namespace TrackingSystem
             }
         }
 
-        private void NowHour_textBox_TextChanged(object sender, EventArgs e)
-        {
-            if (NowHour_textBox.Text == "")
-            {
-                errorProvider1.SetError(NowHour_textBox, "Enter a hour");
-            }
-        }
-
         private void Status_comboBox_Validating(object sender, CancelEventArgs e)
         {
             if (Status_comboBox.SelectedItem == null)
@@ -141,7 +132,7 @@ namespace TrackingSystem
 
         private void Donebutton_Click(object sender, EventArgs e)
         {
-            if (StartTaskdateTimePicker.Value!=DateTime.MinValue && EndTaskdateTimePicker.Value!=DateTime.MinValue && TaskcomboBox.SelectedItem!=null)
+            if (StartTaskdateTimePicker.Value!=DateTime.MinValue && EndTaskdateTimePicker.Value!=DateTime.MinValue && TaskcomboBox.SelectedItem!=null&& Summary_richTextBox.Text!="")
             {
                 sqlconnection = new SqlConnection(cs);
                 sqlconnection.Open();
@@ -149,23 +140,45 @@ namespace TrackingSystem
                 sqlcommand = new SqlCommand(Query, sqlconnection);
                 sqlcommand.Parameters.AddWithValue("@startOfAction", StartTaskdateTimePicker.Value);
                 sqlcommand.Parameters.AddWithValue("@endOfAction", EndTaskdateTimePicker.Value);
-                sqlcommand.Parameters.AddWithValue("@id_Task", TaskcomboBox.SelectedItem);
+                sqlcommand.Parameters.AddWithValue("@id_Task", _baseHelper.SearchForIDTask(TaskcomboBox.Text, sqlconnection, sqlcommand));
                 sqlcommand.Parameters.AddWithValue("@discription", Summary_richTextBox.Text);
-               // sqlcommand.Parameters.AddWithValue("@id_Employee", );
+                sqlcommand.Parameters.AddWithValue("@id_Employee", _baseHelper.SearchForIDEmployee(Employee_comboBox.Text, sqlconnection, sqlcommand));
                 sqlcommand.ExecuteNonQuery();
                 sqlconnection.Close();
                 MessageBox.Show("Insert successfully!");
-                WorkCardID++;
-            }
-            else
-            {
-               
             }
         }
 
         private void AddTaskbutton_Click(object sender, EventArgs e)
         {
+            if (DayOfStartdateTimePicker.Value != DateTime.MinValue && DayOfEnddateTimePicker.Value != DateTime.MinValue && TaskName_textBox.Text != "" && Owner_comboBox.SelectedItem != null && Employee_comboBox.SelectedItem != null && Status_comboBox.SelectedItem != null && NeededHours_textbox.Text != "" && Summary_richTextBox2.Text != "")
+            {
+                sqlconnection = new SqlConnection(cs);
+                sqlconnection.Open();
+                Query = "Insert INTO [Task] (name,summary,dayofstart,dayofend,id_owner,id_employee,allhour,hourNow,id_status) VALUES (@name,@summary,@dayofstart,@dayofend,@id_owner,@id_employee,@allhour,@hourNow,@id_status)";
+                sqlcommand = new SqlCommand(Query, sqlconnection);
+                sqlcommand.Parameters.AddWithValue("@name",TaskName_textBox.Text);
+                sqlcommand.Parameters.AddWithValue("@summary",Summary_richTextBox2.Text);
+                sqlcommand.Parameters.AddWithValue("@dayofstart",DayOfStartdateTimePicker.Value);
+                sqlcommand.Parameters.AddWithValue("@dayofend",DayOfEnddateTimePicker.Value);
+                sqlcommand.Parameters.AddWithValue("@id_owner",_baseHelper.SearchForIDEmployee(Owner_comboBox.Text,sqlconnection,sqlcommand));
+                sqlcommand.Parameters.AddWithValue("@id_employee", _baseHelper.SearchForIDEmployee(Employee_comboBox.Text, sqlconnection, sqlcommand));
+                sqlcommand.Parameters.AddWithValue("@allhour",NeededHours_textbox.Text);
+                sqlcommand.Parameters.AddWithValue("@hourNow", NowHourstextBox.Text);
+                sqlcommand.Parameters.AddWithValue("id_status",Status_comboBox.SelectedIndex);
+            }
+        }
 
+        private void NowHourstextBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (NowHourstextBox.Text == "")
+            {
+                errorProvider1.SetError(NowHourstextBox, "Enter a hour");
+            }
+        }
+
+        private void Tracker_Load(object sender, EventArgs e)
+        {
         }
     }
 }
