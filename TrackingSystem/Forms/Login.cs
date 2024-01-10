@@ -22,7 +22,7 @@ namespace TrackingSystem
         DataTable datatable;
         SqlDataAdapter sqladapter;
         DataView gridDataSourse;
-        private Storagee _storage;
+        public Storagee _storage;
 
         public Login()
         {
@@ -73,7 +73,7 @@ namespace TrackingSystem
                             Employee myProfile = new Employee(MyProfileId, MyProfileUserName, MyProfilePassword, MyProfileName, MyProfileLastName, MyProfileRole);
                             _storage.SetMyProfile(myProfile);
                         }
-                        Tracker tracker = new Tracker();
+                        Tracker tracker = new Tracker(_storage);
                         tracker.Show();
                         this.Hide();
                     }

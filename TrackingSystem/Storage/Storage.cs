@@ -8,10 +8,10 @@ namespace TrackingSystem.Storage
 {
     public class Storagee 
     {
-        private Employee MYProfile;
-        private List<Employee> MyEmployeeList;
-        private List<Task> MyTaskList;
-        private List<WorkCard> MyWorkCardList;
+        public Employee MYProfile;
+        public List<Employee> MyEmployeeList;
+        public List<Task> MyTaskList;
+        public List<WorkCard> MyWorkCardList;
 
         public Employee GetMyProfile()
         { 
